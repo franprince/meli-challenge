@@ -7,7 +7,7 @@ const port = 3001;
 app.use(cors());
 
 app.get("/products/:id", (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
   fetch(`https://api.mercadolibre.com/products/${id}`)
     .then((data) => data.json())
     .then((product) => {
