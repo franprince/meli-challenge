@@ -7,26 +7,24 @@ const port = 3001;
 app.use(cors());
 
 app.get("/products/:id", (req, res) => {
-  const baseUrl = "https://api.mercadolibre.com/products/";
   const id = req.params.id;
-  fetch(`${baseUrl}${id}`)
+  fetch(`https://api.mercadolibre.com/products/${id}`)
     .then((data) => data.json())
-    .then((json) => {
-      if (!json.error) {
+    .then((product) => {
+      if (product.name && res.statusCode === 200) {
         res.json({
-          name: json.name,
-          attributes: json.attributes,
-          pictures: json.pictures,
+          name: product.name,
+          attributes: product.attributes,
+          pictures: product.pictures,
+          id: product.id,
         });
       } else {
-        res.json(json);
+        res.status(404).json(product);
       }
     })
-    .catch((err) => res.send("Ocurrió un error:" + err));
+    .catch((err) => res.json.status(500)({ message: err }));
 });
 
 app.listen(port, () => {
-  console.log(
-    `🤖<MeLi challenge server listening at http://localhost:${port})`
-  );
+  console.log(`🤖<Server listening at http://localhost:${port})`);
 });
