@@ -12,7 +12,7 @@ app.get("/products/:id", (req, res) => {
     .then((data) => data.json())
     .then((product) => {
       if (product.name && res.statusCode === 200) {
-        res.json({
+        res.status(200).json({
           name: product.name,
           attributes: product.attributes,
           pictures: product.pictures,
