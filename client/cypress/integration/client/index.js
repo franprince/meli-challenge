@@ -8,10 +8,10 @@ describe("ProductDetails", () => {
     cy.intercept("GET", "/products/MLA14186171", {
       fixture: "MLA14186171.json",
     }).as("getProduct");
+    cy.visit("http://localhost:3000/");
   });
 
-  it("All elements are present", () => {
-    cy.visit("http://localhost:3000/");
+  it("Checks all elements are present", () => {
     cy.get("form").within(() => {
       cy.get("input").type("MLA14186171");
       cy.get("button").click();
@@ -25,11 +25,10 @@ describe("ProductDetails", () => {
       .should("to.be.visible");
   });
 
-  it("View more details shouldn't be visible", () => {
+  it("Shouldn't show the more details button", () => {
     cy.intercept("GET", "/products/MLA14186171", {
       fixture: "MLA14186171-noExtraDetails.json",
     }).as("getProductNoDetails");
-    cy.visit("http://localhost:3000/");
     cy.get("form").within(() => {
       cy.get("input").type("MLA14186171");
       cy.get("button").click();
@@ -40,11 +39,10 @@ describe("ProductDetails", () => {
       .should("not.exist");
   });
 
-  it("Should display product details", () => {
+  it("Should display more product details", () => {
     cy.intercept("GET", "/products/MLA14186171", {
       fixture: "MLA14186171-noExtraThumbnails.json",
     }).as("getProductNoExtraThumbnails");
-    cy.visit("http://localhost:3000/");
     cy.get("form").within(() => {
       cy.get("input").type("MLA14186171");
       cy.get("button").click();
@@ -60,10 +58,9 @@ describe("ProductDetails", () => {
       });
   });
 
-  it("Should display error", () => {
-    cy.visit("http://localhost:3000/");
+  it("Shows error message", () => {
     cy.get("form").within(() => {
-      cy.get("input").type("AGUANTE BOQUITA");
+      cy.get("input").type("Boca Juniors");
       cy.get("button").click();
       cy.wait(["@getError"]);
     });
