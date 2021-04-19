@@ -16,7 +16,7 @@ function Product({ productData }) {
                   key={picture.url}
                   className="product-thumbnail"
                   src={picture.url}
-                  alt={`${productData.data.name} miniatura ${index}`}
+                  alt={`${productData.data.name} miniatura ${index + 1}`}
                   onMouseEnter={() => setCurrentPicture(index)}
                 />
               ))}

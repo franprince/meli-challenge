@@ -18,17 +18,23 @@ function App() {
       setProductData({ ...productData, status: "pending" });
       const res = await fetch(`http://localhost:3001/products/${value}`);
       const data = await res.json();
-      if (data.error) {
+      if (res.status === 404) {
         setProductData({
           data: null,
           status: "error",
           error: "No se encontró el producto.",
         });
-      } else {
+      } else if (res.status === 200) {
         setProductData({
           data: data,
           status: "fullfilled",
           error: "",
+        });
+      } else {
+        setProductData({
+          data: null,
+          status: "error",
+          error: res.status === 500 ? "Error del servidor" : "Hubo un error",
         });
       }
     } catch (error) {

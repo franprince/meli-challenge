@@ -49,6 +49,7 @@ main {
     }
     @media (max-width: 1023px) {
       .nav-logo {
+        width: 50px;
         background-image: url("./images/logo_mobile.png");
       }
       margin: 0 10px;
@@ -64,30 +65,57 @@ main {
     padding-bottom: 20px;
     font-size: 20px;
   }
-  input {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    width: calc(100% - 120px);
-    padding: 10px;
-    margin-right: 15px;
-    &:focus {
-      border: 1px solid rgba(0, 0, 0, 0.4);
-      outline: 0;
+  .input-with-icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    input {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      width: calc(100% - 120px);
+      padding: 10px 40px;
+      margin-right: 15px;
+
+      &:focus {
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        outline: 0;
+      }
+    }
+    .icon-button-search {
+      background: none;
+      border: none;
+      position: absolute;
+      left: 0;
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      font-size: 0;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .icon-button-clear {
+      background: none;
+      border: none;
+      position: absolute;
+      right: 95px;
+      font-size: 0;
+    }
+    .search-button {
+      font-weight: 600;
+      padding: 10px 15px;
+      border-radius: 5px;
+      border-color: transparent;
+      background-color: rgba(65, 137, 230, 0.15);
+      color: #3483fa;
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(65, 137, 230, 0.2);
+        transition: box-shadow 0.25s ease-out, background-color 0.2s ease-out;
+        box-shadow: 0 0 0 0 #fff;
+      }
     }
   }
-  button {
-    font-weight: 600;
-    padding: 10px 15px;
-    border-radius: 5px;
-    border-color: transparent;
-    background-color: rgba(65, 137, 230, 0.15);
-    color: #3483fa;
-    &:hover {
-      cursor: pointer;
-      background-color: rgba(65, 137, 230, 0.2);
-      transition: box-shadow 0.25s ease-out, background-color 0.2s ease-out;
-      box-shadow: 0 0 0 0 #fff;
-    }
-  }
+
   .search-form {
     display: flex;
     flex-direction: column;
