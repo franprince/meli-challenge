@@ -901,6 +901,17 @@ const handlers = [
       })
     );
   }),
+  rest.get("http://localhost:3001/products/error", (req, res, ctx) => {
+    return res(
+      ctx.status(404),
+      ctx.set("Content-Type", "application/json"),
+      ctx.json({
+        error: "resource not found",
+        message:
+          "Si quieres conocer los recursos de la API que se encuentran disponibles visita el Sitio de Desarrolladores de MercadoLibre (http://developers.mercadolibre.com)",
+      })
+    );
+  }),
 ];
 
 export { handlers, rest };

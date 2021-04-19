@@ -4,6 +4,7 @@ describe("ProductDetails", () => {
   beforeEach(() => {
     cy.intercept("/products/*", {
       fixture: "error.json",
+      statusCode: 404,
     }).as("getError");
     cy.intercept("GET", "/products/MLA14186171", {
       fixture: "MLA14186171.json",
@@ -25,7 +26,7 @@ describe("ProductDetails", () => {
       .should("to.be.visible");
   });
 
-  it("Shouldn't show the more details button", () => {
+  it("Shouldn't show the 'more details' button", () => {
     cy.intercept("GET", "/products/MLA14186171", {
       fixture: "MLA14186171-noExtraDetails.json",
     }).as("getProductNoDetails");
