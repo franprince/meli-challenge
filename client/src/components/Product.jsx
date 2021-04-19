@@ -6,6 +6,7 @@ function Product({ productData }) {
   return productData.status === "fullfilled" ? (
     <>
       <div className="product-box">
+        <p className="product-id">{`Código del catálogo: ${productData.data.id}`}</p>
         <h1 className="product-name">{productData.data.name}</h1>
         <div className="product-wrapper">
           <div className="product-gallery-container">
@@ -50,7 +51,6 @@ function Product({ productData }) {
           </button>
         ) : null}
       </div>
-
       {moreDetails && (
         <div className="product-more-details">
           <ul>

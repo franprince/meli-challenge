@@ -97,14 +97,24 @@ main {
   display: flex;
   flex-direction: column;
 
+  .product-id {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.3);
+    align-self: flex-end;
+    margin: 20px 0 5px 0;
+    width: 50%;
+  }
   .product-name {
     flex: 50%;
-    font-size: 22px;
+    font-size: 20px;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 600;
     padding-bottom: 8px;
     line-height: 1.18;
     word-break: break-word;
+    align-self: flex-end;
+    margin: 0;
+    width: 50%;
   }
   .product-wrapper {
     display: flex;
@@ -157,6 +167,13 @@ main {
     }
   }
   @media (max-width: 500px) {
+    .product-name {
+      margin: 20px 0 5px 0;
+      width: 100%;
+    }
+    .product-id {
+      width: 100%;
+    }
     .product-wrapper {
       flex-direction: column;
     }

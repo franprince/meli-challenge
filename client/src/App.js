@@ -16,9 +16,9 @@ function App() {
     try {
       if (!value) return;
       setProductData({ ...productData, status: "pending" });
-      const data = await fetch(`/products/${value}`);
-      const jsonData = await data.json();
-      if (jsonData.error) {
+      const res = await fetch(`http://localhost:3001/products/${value}`);
+      const data = await res.json();
+      if (data.error) {
         setProductData({
           data: null,
           status: "error",
@@ -26,7 +26,7 @@ function App() {
         });
       } else {
         setProductData({
-          data: jsonData,
+          data: data,
           status: "fullfilled",
           error: "",
         });
