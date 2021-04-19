@@ -41,6 +41,7 @@
   "proxy": "http://localhost:3001",
   "devDependencies": {
     "cypress-eslint-preprocessor": "^1.2.2",
-    "eslint-plugin-cypress": "^2.11.2"
+    "eslint-plugin-cypress": "^2.11.2",
+    "msw": "^0.28.1"
   }
 }
