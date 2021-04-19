@@ -1,0 +1,66 @@
+{
+  "name": "Samsung Galaxy S10 512 GB azul prisma 8 GB RAM",
+  "attributes": [
+    {
+      "id": "BRAND",
+      "name": "Marca",
+      "value_id": "206",
+      "value_name": "Samsung",
+      "values": [
+        {
+          "id": "206",
+          "name": "Samsung"
+        }
+      ]
+    },
+    {
+      "id": "LINE",
+      "name": "Línea",
+      "value_id": "249991",
+      "value_name": "Galaxy S",
+      "values": [
+        {
+          "id": "249991",
+          "name": "Galaxy S"
+        }
+      ]
+    }
+  ],
+  "pictures": [
+    {
+      "id": "898417-MLA31578002324_072019",
+      "url": "https://mla-s2-p.mlstatic.com/898417-MLA31578002324_072019-F.jpg",
+      "suggested_for_picker": [],
+      "max_width": 597,
+      "max_height": 1200
+    },
+    {
+      "id": "819190-MLA31577782963_072019",
+      "url": "https://mla-s2-p.mlstatic.com/819190-MLA31577782963_072019-F.jpg",
+      "suggested_for_picker": ["COLOR"],
+      "max_width": 596,
+      "max_height": 1200
+    },
+    {
+      "id": "805557-MLA31577782965_072019",
+      "url": "https://mla-s2-p.mlstatic.com/805557-MLA31577782965_072019-F.jpg",
+      "suggested_for_picker": [],
+      "max_width": 553,
+      "max_height": 1200
+    },
+    {
+      "id": "606209-MLA31577782968_072019",
+      "url": "https://mla-s2-p.mlstatic.com/606209-MLA31577782968_072019-F.jpg",
+      "suggested_for_picker": [],
+      "max_width": 578,
+      "max_height": 1200
+    },
+    {
+      "id": "864702-MLA31578503519_072019",
+      "url": "https://mla-s2-p.mlstatic.com/864702-MLA31578503519_072019-F.jpg",
+      "suggested_for_picker": [],
+      "max_width": 586,
+      "max_height": 1200
+    }
+  ]
+}
